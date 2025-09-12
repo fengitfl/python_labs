@@ -1,12 +1,15 @@
-N = int(input())
-count_true = 0
-count_false = 0
-
+N = int(input("N:"))
+on_site_count = 0
+distance_count = 0
+k=1
 for _ in range(N):
-    surname, name, age, format_part = input().split()
-    if format_part == "True":
-        count_true += 1
+    data = input(f"in_{k}").split()
+    participation_format = data[3] == 'True'
+    if participation_format:
+        on_site_count += 1
     else:
-        count_false += 1
+        distance_count += 1
+    k+=1
 
-print(count_true, count_false)
+
+print(on_site_count, distance_count)
