@@ -11,5 +11,4 @@ for _ in range(N):
         distance_count += 1
     k+=1
 
-
 print(on_site_count, distance_count)
