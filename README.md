@@ -1,3 +1,3 @@
 # Лабораторная работа №1
 Задание 1
-(https://github.com/user-attachments/assets/adb7af27-ef71-4b84-b40f-c1e86026e0f0)
+![1](https://github.com/user-attachments/assets/f243310f-c128-47d2-8899-00341cda3f3a)
