@@ -4,3 +4,8 @@
 
 ## matrix 
 <img width="1245" height="1088" alt="matrix" src="https://github.com/user-attachments/assets/1345d757-4426-41e5-bb18-d1e03aecf7aa" />
+
+## tuples
+<img width="1523" height="963" alt="image" src="https://github.com/user-attachments/assets/c8f4123b-7038-4fd7-ac6c-faef3e171777" />
+
+
