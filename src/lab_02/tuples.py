@@ -1,15 +1,15 @@
 def format_record(s):
     for i in s:
-        if i!=3:
-            if not i:
-                return "ValueError"
+        if not i:
+            return "ValueError"
 
     fio=s[0]
     fio=fio.split()
-    if s[2]>5 or s[2] <1:
-        return "ValueError"
     if type(s[2]) != float:
         return "TypeError"
+    if 1<s[2]>5:
+        return "ValueError"
+
     try:fio_ready=('"'+fio[0].capitalize()+ " " + fio[1][0].upper()+"."+fio[2][0].upper()+".")
     except IndexError : fio_ready=('"'+fio[0].capitalize()+ " " + fio[1][0].upper()+".")
 
