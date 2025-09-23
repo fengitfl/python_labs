@@ -3,8 +3,12 @@ def min_max(s):
     if s==p: return "ValueError"
     return min(s), max(s)
 def unique_sorted(s):
+    if s == p: return "ValueError"
     return list(set(sorted(s)))
+
+
 def  flatten(s):
+    if s == p: return "ValueError"
     v=[]
     for x in s:
         for i in x:
@@ -14,7 +18,7 @@ def  flatten(s):
                  v.append((i))
     return v
 
-#min_max
+
 print("min_max")
 print(min_max(s=[3, -1, 5, 5, 0]))
 print(min_max(s=[42]))
