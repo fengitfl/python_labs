@@ -1,6 +1,6 @@
 def format_record(s):
     for i in s:
-        if len(s) != 2:
+        if len(s) != 3:
             if not i:
                 return "ValueError"
 
@@ -21,6 +21,7 @@ def format_record(s):
     gpa_ready=(gpa+'"')
     end = f"{fio_ready}, {group}, {gpa_ready}"
     return end
+
 
 
 
