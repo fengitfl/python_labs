@@ -26,5 +26,3 @@ def format_record(s):
 
 
 
-
-

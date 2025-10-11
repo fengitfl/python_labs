@@ -6,3 +6,4 @@ a=float(a)
 b=float(b)
 print(f"sum={(a+b):.2f}; avg={((a+b)/2):.2f}")
 
+
