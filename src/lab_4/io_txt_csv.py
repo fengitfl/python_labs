@@ -33,7 +33,7 @@ def create_directory(directory_path):
     except Exception as e:
         print(f"Ошибка при создании директории: {e}")
         return False
-# txt = read_text(r"C:\Users\eniko\PycharmProjects\PythonProject\data\lab_4\input.txt")
-# print(txt)
-# print(write_csv([("word","count"),("test",3)], r"C:\Users\eniko\PycharmProjects\PythonProject\data\check.csv"))
+txt = read_text(r"C:\Users\eniko\PycharmProjects\PythonProject\data\lab_4\input.txt")
+print(txt)
+print(write_csv([("word","count"),("test",3)], r"C:\Users\eniko\PycharmProjects\PythonProject\data\check.csv"))
 

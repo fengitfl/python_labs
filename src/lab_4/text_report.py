@@ -1,8 +1,21 @@
 import os, csv, sys
 from collections import Counter
-from src.lib.text import normalize, tokenize, top_n, count_freq
-from src.lab_3.text_stats import table
-from io_txt_csv import read_text
+from src.lab_3.text import normalize, tokenize, top_n, count_freq
+from src.lib.io_txt_csv import read_text
+def table(arr: list[tuple[str, int]], isTable: bool = True) -> str:
+    if not arr:
+        return "(нет данных)"
+    s = str()
+    if isTable:
+        word_col_width = max(len("слово"), max(len(a[0]) for a in arr))
+        freq_col_width = max(len("частота"), max(len(str(a[1])) for a in arr))
+        s += f"{'слово'.ljust(word_col_width)} | {'частота'.rjust(freq_col_width)}"
+        s += "\n" + "-" * word_col_width + "-+-" + "-" * freq_col_width
+        for word, freq in arr:
+            s += f"\n{word.ljust(word_col_width)} | {str(freq).rjust(freq_col_width)}"
+        return s
+    else:
+        return "\n".join(f"{a[0]}: {a[1]}" for a in arr)
 
 input_files = [
     r"C:\Users\eniko\PycharmProjects\PythonProject\data\lab_4\a.txt",
@@ -18,7 +31,7 @@ for path in input_files:
 multiple_files = len(input_files) > 1
 
 if multiple_files:
-    print("Режим: несколько файлов\n")
+    print("Режим несколько файлов: выполнен\n")
 
     per_file_data = []
     total_freq = Counter()
@@ -52,7 +65,7 @@ if multiple_files:
         writer.writerows(total_sorted)
 in1 = True
 if in1:
-    print("Режим: один файл\n")
+    print("Режим один файл:")
 
     path = r"C:\Users\eniko\PycharmProjects\PythonProject\data\lab_4\input.txt"
     text = read_text(path)
@@ -73,7 +86,7 @@ if in1:
         writer.writerows(sorted_words)
 
     print(f"Всего слов: {total_words}")
-    print(f"Уникальных слов: {unique_words}\n")
+    print(f"Уникальных слов: {unique_words}")
     print("Топ-5:")
     print(table(top_n(freqs, 5), True))
 

@@ -1,4 +1,4 @@
-from src.lib.text import *
+from text import *
 print("normalise:")
 print(normalize("\r\n        word окак"))
 print(normalize("Hello\r\nWorld"))
