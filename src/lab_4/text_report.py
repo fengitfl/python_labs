@@ -1,22 +1,8 @@
 import os, csv, sys
 from collections import Counter
-from src.lab_3.text import normalize, tokenize, top_n, count_freq
-from src.lib.io_txt_csv import read_text
-def table(arr: list[tuple[str, int]], isTable: bool = True) -> str:
-    if not arr:
-        return "(нет данных)"
-    s = str()
-    if isTable:
-        word_col_width = max(len("слово"), max(len(a[0]) for a in arr))
-        freq_col_width = max(len("частота"), max(len(str(a[1])) for a in arr))
-        s += f"{'слово'.ljust(word_col_width)} | {'частота'.rjust(freq_col_width)}"
-        s += "\n" + "-" * word_col_width + "-+-" + "-" * freq_col_width
-        for word, freq in arr:
-            s += f"\n{word.ljust(word_col_width)} | {str(freq).rjust(freq_col_width)}"
-        return s
-    else:
-        return "\n".join(f"{a[0]}: {a[1]}" for a in arr)
-
+from src.lib.text import normalize, tokenize, top_n, count_freq
+from src.lib.text_stats import table
+from src.lib.io_txt_csv import read_text, create_directory
 input_files = [
     r"C:\Users\eniko\PycharmProjects\PythonProject\data\lab_4\a.txt",
     r"C:\Users\eniko\PycharmProjects\PythonProject\data\lab_4\b.txt",
@@ -26,8 +12,6 @@ for path in input_files:
     if not os.path.exists(path):
         print(f"Ошибка: входной файл '{path}' не найден.")
         sys.exit(1)
-
-
 multiple_files = len(input_files) > 1
 
 if multiple_files:
@@ -35,7 +19,6 @@ if multiple_files:
 
     per_file_data = []
     total_freq = Counter()
-
     for path in input_files:
         text = read_text(path)
         words = tokenize(normalize(text))
@@ -45,11 +28,9 @@ if multiple_files:
         for word, count in freq.items():
             per_file_data.append((os.path.basename(path), word, count))
 
-
     per_file_data.sort(key=lambda x: (x[0], -x[2], x[1]))
-
     output_dir = r"C:\Users\eniko\PycharmProjects\PythonProject\data"
-    os.makedirs(output_dir, exist_ok=True)
+    create_directory(r"C:\Users\eniko\PycharmProjects\PythonProject\data")
 
     per_file_path = os.path.join(output_dir, "report_per_file.csv")
     with open(per_file_path, "w", encoding="cp65001", newline="") as f:
@@ -73,11 +54,10 @@ if in1:
     total_words = len(words)
     freqs = count_freq(words)
     unique_words = len(freqs)
-
     sorted_words = sorted(freqs.items(), key=lambda x: (-x[1], x[0]))
 
     output_dir = r"C:\Users\eniko\PycharmProjects\PythonProject\data"
-    os.makedirs(output_dir, exist_ok=True)
+    create_directory(r"C:\Users\eniko\PycharmProjects\PythonProject\data")
 
     output_path = os.path.join(output_dir, "report.csv")
     with open(output_path, "w", encoding="cp65001", newline="") as f:
@@ -89,4 +69,3 @@ if in1:
     print(f"Уникальных слов: {unique_words}")
     print("Топ-5:")
     print(table(top_n(freqs, 5), True))
-

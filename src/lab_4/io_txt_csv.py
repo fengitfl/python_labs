@@ -1,22 +1,20 @@
-import csv, os,sys
+import csv, os
 from pathlib import Path
 
-def read_text(path: str) -> str:
+def read_text(path: str, encoding: str = "utf-8"):
     try:
-        with open(path, "r", encoding="utf-8") as f:
-            return f.read()
+        with open(path, encoding=encoding) as file:
+            text = file.read()
+            return text
     except UnicodeDecodeError:
-        print(f"Ошибка: не удалось прочитать '{path}'. Попробуйте encoding='cp65001'")
-        sys.exit(1)
+        print("Неверная кодировка данных")
     except FileNotFoundError:
         print("Файл не найден, укажите полный путь к файлу")
-        return ""
-
 
 def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
         with open(path, 'w', newline='', encoding="utf-8") as file:
             writer = csv.writer(file)
-            if header:
+            if header is not None:
                 writer.writerow(header)
             lenr = len(rows[0])
             for row in rows:

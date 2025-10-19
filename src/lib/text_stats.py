@@ -29,6 +29,3 @@ def main(text: str):
     top5 = sorted(freqs.items(), key=lambda x: (-x[1], x[0]))[:5]
     print("Топ-5:")
     print(table(top5, True))
-
-main(sys.stdin.buffer.read().decode())
-# echo "Привет, мир! Привет!!!" | python src/text_stats.py
