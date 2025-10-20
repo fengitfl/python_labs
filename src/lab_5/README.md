@@ -14,9 +14,10 @@
 <img width="614" height="247" alt="6" src="https://github.com/user-attachments/assets/496fdaaf-1afb-4e6f-96eb-bf34a71d9be8" />
 
 ## `Файл csv_xlsx.py`
-<img width="1415" height="625" alt="7" src="https://github.com/user-attachments/assets/90c3839a-7851-4b2d-8b8c-63796157fa01" />
+<img width="1807" height="1129" alt="7" src="https://github.com/user-attachments/assets/21c0ee69-c4a2-48a4-bea5-ccd331605ba1" />
 
 ## CSV -> XLSX:
 <img width="1123" height="270" alt="8" src="https://github.com/user-attachments/assets/64bd7c60-1cff-496b-8a33-f5d5a414a439" />
-<img width="895" height="1182" alt="9" src="https://github.com/user-attachments/assets/f7adf8b1-4e04-4e30-9013-5ab6e79dc77d" />
+<img width="1104" height="1197" alt="image" src="https://github.com/user-attachments/assets/2360e92e-6ad9-40c2-8e37-0028a8d5f70c" />
+
 
