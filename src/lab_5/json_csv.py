@@ -35,7 +35,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     with open(json_path, 'w', encoding='utf-8') as jsonfile:
         json.dump(data, jsonfile, ensure_ascii=False, indent=4)
 
-csv_to_json(r"C:\Users\eniko\PycharmProjects\PythonProject\data\samples\people.csv",r"C:\Users\eniko\PycharmProjects\PythonProject\data\out\people_from_csv.json")
+csv_to_json(r"C:\Users\eniko\Gitrep\python_labs\data\samples\people.csv",r"C:\Users\eniko\Gitrep\python_labs\data\out\people_from_csv.json")
 
 
 
