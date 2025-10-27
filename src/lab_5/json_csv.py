@@ -6,11 +6,11 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     if os.path.getsize(json_path) == 0:
         print("ValueError")
         sys.exit(1)
-    if map(type, json_path) != dict:
-        print("ValueError")
-        sys.exit(1)
     with open(json_path, 'r', encoding='utf-8') as json_file:
         json_data = json.load(json_file)
+        if not all(type(x) == dict for x in json_data):
+            print("ValueError")
+            sys.exit(1)
 
     with open(csv_path, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=json_data[0].keys())
