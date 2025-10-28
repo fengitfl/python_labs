@@ -28,7 +28,7 @@ def cli_convert():
         if args.cmd == "json2csv":
             if not check_file(args.input):
                 print(f"Ошибка: Файл {args.input} не существует или недоступен")
-                return 1
+                sys.exit(1)
                 
             json_to_csv(args.input, args.output)
             print(f"Успешно: JSON -> CSV")
@@ -36,7 +36,7 @@ def cli_convert():
         elif args.cmd == "csv2json":
             if not check_file(args.input):
                 print(f"Ошибка: Файл {args.input} не существует или недоступен")
-                return 1
+                sys.exit(1)
                 
             csv_to_json(args.input, args.output)
             print(f"Успешно: CSV -> JSON")
@@ -44,20 +44,20 @@ def cli_convert():
         elif args.cmd == "csv2xlsx":
             if not check_file(args.input):
                 print(f"Ошибка: Файл {args.input} не существует или недоступен")
-                return 1
+                sys.exit(1)
                 
             csv_to_xlsx(args.input, args.output)
             print(f"Успешно: CSV -> XLSX")
             
         else:
             print("Ошибка: Неизвестная команда")
-            return 1
+            sys.exit(1)
             
         return 0
         
     except Exception as e:
         print(f"Ошибка при конвертации: {str(e)}")
-        return 1
+        sys.exit(1)
 
 if __name__ == "__main__":
     sys.exit(cli_convert())

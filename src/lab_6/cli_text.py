@@ -1,9 +1,6 @@
-import sys
+import sys, os, argparse
 sys.path.append(r"C:\Users\eniko\Gitrep\python_labs\src\lib")
 from text_stats import stats_text
-import argparse
-import os
-
 
 def cat_command(input_file: str, number_lines: bool = False):
     if not check_file(input_file):
