@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r'C:\Users\eniko\PycharmProjects\PythonProject\src\lib')
+sys.path.append(r'C:\Users\eniko\Gitrep\python_labs\src\lib')
 
 from text import normalize, tokenize, count_freq, top_n
 
@@ -17,7 +17,7 @@ def table(arr: list[tuple[str, int]], isTable: bool = True) -> str:
         return s
     else:
         return "\n".join(f"{a[0]}: {a[1]}" for a in arr)
-def main(text: str):
+def stats_text(text: str, n: int = 5):
     text = text.strip()
     tokens = normalize(text)
     tokens = tokenize(tokens)
@@ -26,6 +26,6 @@ def main(text: str):
     unique_words = len(freqs)
     print(f"Всего слов: {total_words}")
     print(f"Уникальных слов: {unique_words}")
-    top5 = sorted(freqs.items(), key=lambda x: (-x[1], x[0]))[:5]
-    print("Топ-5:")
-    print(table(top5, True))
+    top_n_words = sorted(freqs.items(), key=lambda x: (-x[1], x[0]))[:n]
+    print(f"Топ-{n}:")
+    print(table(top_n_words, True))

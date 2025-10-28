@@ -2,7 +2,8 @@
 -----------
 ## `Файл json_csv.py`
 ### -> Проверяем есть ли файл, потом его размер (не равен нулю в байтах). В json проверяем словарь ли это, а в csv есть ли заголовок. С помощью DictReader записываем первую строку как ключи, а след строки как словари (ключ : значение)
-<img width="1876" height="1087" alt="1" src="https://github.com/user-attachments/assets/1036ea1c-6065-4bad-96da-03cdf31621c8" />
+![alt text](../../images/lab_5/1.png)
+
 <img width="1760" height="185" alt="2" src="https://github.com/user-attachments/assets/05c8b678-7fd6-4786-87a3-774f5c6146d0" />
 
 ## CSV -> JSON:
