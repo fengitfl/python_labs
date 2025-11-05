@@ -1,7 +1,6 @@
 import os, csv, sys
 
 from openpyxl import Workbook
-
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     if not os.path.exists(csv_path):
         print("FileNotFoundError")
