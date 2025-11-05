@@ -49,7 +49,6 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 csv_to_json(r"C:\Users\eniko\Gitrep\python_labs\data\samples\people.csv",r"C:\Users\eniko\Gitrep\python_labs\data\out\people_from_csv.json")
 
 
-
 # json_to_csv(
 #     r"C:\Users\eniko\PycharmProjects\PythonProject\data\samples\people.json",
 #     r"C:\Users\eniko\PycharmProjects\PythonProject\data\out\people_from_json.csv"
