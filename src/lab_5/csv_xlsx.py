@@ -1,14 +1,12 @@
 import os, csv, sys
+from json_csv import check_csv_file
 
 from openpyxl import Workbook
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
-    if not os.path.exists(csv_path):
-        print("FileNotFoundError")
+    if not check_csv_file(csv_path):
+        print("Error_CSV")
         sys.exit(1)
 
-    if os.path.getsize(csv_path) == 0:
-        print("ValueError")
-        sys.exit(1)
     wb = Workbook()
     ws = wb.active
     ws.title = "Sheet1"
