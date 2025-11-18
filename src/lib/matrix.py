@@ -1,4 +1,6 @@
-def transpose(mat):
+def transpose(
+    mat,
+):
     if not mat:
         return []
     n = len(mat[0])
@@ -13,7 +15,10 @@ def transpose(mat):
         res.append(new_row)
     return res
 
-def row_sums(mat):
+
+def row_sums(
+    mat,
+):
     if not mat:
         return []
     n = len(mat[0])
@@ -28,7 +33,10 @@ def row_sums(mat):
         res.append(s)
     return res
 
-def col_sums(mat):
+
+def col_sums(
+    mat,
+):
     if not mat:
         return []
     n = len(mat[0])
@@ -42,5 +50,3 @@ def col_sums(mat):
             s += mat[i][j]
         res.append(s)
     return res
-
-

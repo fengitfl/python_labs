@@ -1,4 +1,6 @@
-def transpose(mat):
+def transpose(
+    mat,
+):
     if not mat:
         return []
     n = len(mat[0])
@@ -13,7 +15,10 @@ def transpose(mat):
         res.append(new_row)
     return res
 
-def row_sums(mat):
+
+def row_sums(
+    mat,
+):
     if not mat:
         return []
     n = len(mat[0])
@@ -28,7 +33,10 @@ def row_sums(mat):
         res.append(s)
     return res
 
-def col_sums(mat):
+
+def col_sums(
+    mat,
+):
     if not mat:
         return []
     n = len(mat[0])
@@ -43,22 +51,165 @@ def col_sums(mat):
         res.append(s)
     return res
 
+
 print("transpose")
-print(transpose(mat=[[1, 2, 3]]))
-print(transpose(mat=[[1], [2], [3]]))
-print(transpose(mat=[[1, 2], [3, 4]]))
+print(
+    transpose(
+        mat=[
+            [
+                1,
+                2,
+                3,
+            ]
+        ]
+    )
+)
+print(
+    transpose(
+        mat=[
+            [1],
+            [2],
+            [3],
+        ]
+    )
+)
+print(
+    transpose(
+        mat=[
+            [
+                1,
+                2,
+            ],
+            [
+                3,
+                4,
+            ],
+        ]
+    )
+)
 print(transpose(mat=[]))
-print(transpose(mat=[[1, 2], [3]]))
+print(
+    transpose(
+        mat=[
+            [
+                1,
+                2,
+            ],
+            [3],
+        ]
+    )
+)
 print(" ")
 print("row_sums")
-print(row_sums(mat=[[1, 2, 3], [4, 5, 6]]))
-print(row_sums(mat=[[-1, 1], [10, -10]]))
-print(row_sums(mat=[[0, 0], [0, 0]]))
-print(row_sums(mat=[[1, 2], [3]]))
+print(
+    row_sums(
+        mat=[
+            [
+                1,
+                2,
+                3,
+            ],
+            [
+                4,
+                5,
+                6,
+            ],
+        ]
+    )
+)
+print(
+    row_sums(
+        mat=[
+            [
+                -1,
+                1,
+            ],
+            [
+                10,
+                -10,
+            ],
+        ]
+    )
+)
+print(
+    row_sums(
+        mat=[
+            [
+                0,
+                0,
+            ],
+            [
+                0,
+                0,
+            ],
+        ]
+    )
+)
+print(
+    row_sums(
+        mat=[
+            [
+                1,
+                2,
+            ],
+            [3],
+        ]
+    )
+)
 print(" ")
 print("col_sums")
-print(col_sums(mat=[[1, 2, 3], [4, 5, 6]]))
-print(col_sums(mat=[[-1, 1], [10, -10]]))
-print(col_sums(mat=[[0, 0], [0, 0]]))
-print(col_sums(mat=[[1, 2], [3]]))
-
+print(
+    col_sums(
+        mat=[
+            [
+                1,
+                2,
+                3,
+            ],
+            [
+                4,
+                5,
+                6,
+            ],
+        ]
+    )
+)
+print(
+    col_sums(
+        mat=[
+            [
+                -1,
+                1,
+            ],
+            [
+                10,
+                -10,
+            ],
+        ]
+    )
+)
+print(
+    col_sums(
+        mat=[
+            [
+                0,
+                0,
+            ],
+            [
+                0,
+                0,
+            ],
+        ]
+    )
+)
+print(
+    col_sums(
+        mat=[
+            [
+                1,
+                2,
+            ],
+            [3],
+        ]
+    )
+)
