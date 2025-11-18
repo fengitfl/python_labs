@@ -13,6 +13,7 @@ dev = [
     "pytest-cov>=5.0.0",
     "black>=24.0.0",
 ]
+dependencies=[]
 
 [tool.black]
 line-length = 88
