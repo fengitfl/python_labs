@@ -1,10 +1,8 @@
 import sys, argparse
 
-sys.path.append(r"C:\Users\eniko\Gitrep\python_labs\src\lib")
-sys.path.append(r"C:\Users\eniko\Gitrep\python_labs\src\lab_6")
-from csv_xlsx import csv_to_xlsx
-from json_csv import json_to_csv, csv_to_json
-from cli_text import check_file
+from lib.csv_xlsx import csv_to_xlsx
+from lib.json_csv import json_to_csv, csv_to_json
+from lab_6.cli_text import check_file
 
 
 def cli_convert():
