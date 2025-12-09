@@ -47,15 +47,15 @@ class Student:
     def __str__(self) -> str:
         return f"Студент: {self.fio}, Группа: {self.group}, GPA: {self.gpa}, Возраст: {self.age()} лет"
 
-if __name__ == "__main__":
-    try:
-        student = Student(
-            fio="Никонов Егор Максимович",
-            birthdate="2007-11-16",
-            group="BIVT25-5",
-            gpa=4.0
-        )
-        print(student)
-        print(f"Словарь: {student.to_dict()}")
-    except ValueError as e:
-        print(f"Ошибка: {e}")
+
+try:
+    student = Student(
+    fio="Никонов Егор Максимович",
+    birthdate="2007-11-16",
+    group="BIVT25-5",
+    gpa=4.0
+    )
+    print(student)
+    print(f"Словарь: {student.to_dict()}")
+except ValueError as e:
+    print(f"Ошибка: {e}")

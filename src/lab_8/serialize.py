@@ -31,15 +31,15 @@ def students_from_json(path: str) -> List[Student]:
         print(f"Ошибка декодирования JSON из файла {path}")
         return []
 
-if __name__ == "__main__":
-    students = [
-        Student("Иванов Иван", "2000-05-15", "SE-01", 4.5),
-        Student("Петрова Анна", "2001-08-22", "SE-02", 3.8),
-        Student("Сидоров Алексей", "1999-12-10", "SE-01", 4.2)
-    ]
+# if __name__ == "__main__":
+students = [
+    Student("Иванов Иван", "2000-05-15", "SE-01", 4.5),
+    Student("Петрова Анна", "2001-08-22", "SE-02", 3.8),
+    Student("Сидоров Алексей", "1999-12-10", "SE-01", 4.2)
+]
     
-    students_to_json(students, r"C:\Users\eniko\Gitrep\python_labs\data\out\students_output.json")
+students_to_json(students, r"C:\Users\eniko\Gitrep\python_labs\data\out\students_output.json")
     
-    loaded_students = students_from_json(r"C:\Users\eniko\Gitrep\python_labs\data\lab_8\students_input.json")
-    for student in loaded_students:
-        print(student)
+loaded_students = students_from_json(r"C:\Users\eniko\Gitrep\python_labs\data\lab_8\students_input.json")
+for student in loaded_students:
+    print(student)
