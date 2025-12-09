@@ -161,6 +161,6 @@ if __name__ == "__main__":
     # print("\n5. Удаление студента...")
     # group.remove("Иванов Иван")
 
-    print("\n6. Статистика:")
-    group.print_stats()
+    # print("\n6. Статистика:")
+    # group.print_stats()
     
