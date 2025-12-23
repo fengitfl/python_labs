@@ -1,5 +1,5 @@
 from collections import deque
-from typing import Optional, Any
+from typing import Optional
 
 
 class Stack:  
